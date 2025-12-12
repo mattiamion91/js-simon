@@ -28,11 +28,15 @@ const clock = setInterval(() => {  //
 const generatedArray = (getArrRandomNumInRangeMaxEl(1, 50, 5)); //numeri generati con le funzioni
 const displayArray = document.getElementById('display-array'); // seleziono il mio array generato
 for (i = 0; i < generatedArray.length; i++) { //ciclo tutti nomi contenuti nell'array
-    
+
     displayArray.innerHTML += `<h2>${generatedArray[i]}</h2>` //stampo e creo in pagina deli nuovi <li> con all'interno i numeri generati
     console.log(generatedArray[i]); //stampo in console i nomi separati
 
 }
+
+setTimeout(function () { //imposto un timeout che...
+    displayArray.classList.add("d-none"); //mi aggiunga la classe BS al mio div e lo nascond...
+}, 31000); // dopo 30sec
 
 
 //chiedo all'utente di inserire i 5 numeri che deve avere memorizato
