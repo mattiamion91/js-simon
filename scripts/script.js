@@ -8,21 +8,57 @@ let seconds = 30; //imposto la variabile da cui partirá il conteggio
 countdown.innerText = seconds //gestisco la variabile secondi aggiorrnata in pagina
 
 const clock = setInterval(() => {  //
+
     if (seconds === 0) { //SE i secondi sono ungali a 0...
+
         clearInterval(clock); //interrompo la ripetizione temporale
+
     } else { //Altrimenti... 
+
         seconds = seconds - 1; //decremento di 1 secondo
+
         countdown.innerText = seconds //inserisco in pagina output agironato secondi
+
     }
+
 }, 1000)
 
-
-
-
 //genero 5 numeri casuali che non si ripetono e rimangono visibili per 30 secondi
+
+console.log(getArrRandomNumInRangeMaxEl(1, 50, 5));
 
 //chiedo all'utente di inserire i 5 numeri che deve avere memorizato
 
 //verifico che i numeri inseriti siano corretti
 
 //do risposta al giocatore
+
+
+
+
+
+
+//funzioni
+
+function getArrRandomNumInRangeMaxEl(minNum, maxNum, totNum) { //funzione cre generi un array di numeri casuali in un determinato range
+
+    const randomArr = []; //arr vuoto in cui verrano pushiati i numero generati
+
+    while (randomArr.length < totNum) { //uso un cilo while che esegue il codice fino a che la condizione non é false
+
+        const randomNum = getRandomNumberInRange(minNum, maxNum); //imposto costante che genera un numero invocando la funzione creta
+
+        if (!randomArr.includes(randomNum)) { //SE il numero generato NON fa gia parte dell'arr allora lo pusho dentro l'arr
+
+            randomArr.push(randomNum);
+        }
+
+    }
+
+    return randomArr
+}
+
+function getRandomNumberInRange(min, max) { //funzione che miritorni un numero random tra due valori dati
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
