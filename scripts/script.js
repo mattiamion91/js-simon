@@ -41,6 +41,31 @@ setTimeout(function () { //imposto un timeout che...
 
 //chiedo all'utente di inserire i 5 numeri che deve avere memorizato
 
+const playerNumbers = document.getElementById('player-numebers') //seleziono il mio elemento
+setTimeout(function () { //imposto un timeout che...
+    playerNumbers.classList.remove("d-none"); //mi tolgie la classe BS al mio div e lo fa apparire...
+}, 31000); // dopo 30sec
+
+//seleziono il form
+
+const form = document.querySelector('form');
+
+//elaborazione
+
+playerNumbers.addEventListener('submit', (e) => {
+    e.preventDefault() //blocco comportamento base del form
+
+    console.log("submit") //check evento submit
+
+    //seleziono campi input
+
+    const firstGuess = document.getElementById('first-guess')
+    const secondGuess = document.getElementById('second-guess')
+    const thirdGuess = document.getElementById('third-guess')
+    const fourthGuess = document.getElementById('fourth-guess')
+    const fifthGuess = document.getElementById('fifth-guess')
+})
+
 //verifico che i numeri inseriti siano corretti
 
 //do risposta al giocatore
