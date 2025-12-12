@@ -25,7 +25,15 @@ const clock = setInterval(() => {  //
 
 //genero 5 numeri casuali che non si ripetono e rimangono visibili per 30 secondi
 
-console.log(getArrRandomNumInRangeMaxEl(1, 50, 5));
+const generatedArray = (getArrRandomNumInRangeMaxEl(1, 50, 5)); //numeri generati con le funzioni
+const displayArray = document.getElementById('display-array'); // seleziono il mio array generato
+for (i = 0; i < generatedArray.length; i++) { //ciclo tutti nomi contenuti nell'array
+    
+    displayArray.innerHTML += `<h2>${generatedArray[i]}</h2>` //stampo e creo in pagina deli nuovi <li> con all'interno i numeri generati
+    console.log(generatedArray[i]); //stampo in console i nomi separati
+
+}
+
 
 //chiedo all'utente di inserire i 5 numeri che deve avere memorizato
 
